@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-        return view('dash.index');
+        $dato = "Hola Mundo";
+
+    return view('dash.index')->with('dato', $dato);
+    
+        
     }
 }

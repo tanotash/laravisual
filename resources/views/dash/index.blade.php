@@ -1,5 +1,6 @@
 @extends('adminlte::page')
 
+
 @section('title', 'Dashboard')
 
 @section('content_header')
@@ -11,6 +12,8 @@
 
 @section('content')
     <p>Proximamente un dashboard</p>
+    <p>{{$hola='hola'}}</p>
+    
 @stop
 
 @section('css')
@@ -18,5 +21,6 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 @stop
