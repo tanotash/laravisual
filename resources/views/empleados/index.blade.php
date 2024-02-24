@@ -1,5 +1,9 @@
 @extends('adminlte::page')
 
+@section('css')
+<link href='https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css' rel='stylesheet'>
+@stop
+
 @section('title', 'Dashboard')
 
 @section('content_header')
@@ -8,7 +12,7 @@
 
 @section('content')
    <a href="empleados/create" class="btn btn-primary mb-3">Agregar Empleado</a>
-   <table class='table table-dark table-strippet mt-4'>
+   <table id='empleados' class='table table-dark table-strippet mt-4' style="width:100">
     <thead>
         <tr>
             <th>ID</th>
@@ -45,5 +49,10 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js'> </script>
+    <script src='https://cdn.datatables.net/2.0.0/js/dataTables.js'> </script>
+    <script src='https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js'></script>
+    <script>new DataTable('#empleados');</script>
+
 @stop

@@ -13,22 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/', function () {
-    return view('dash.index');
-});
- */
 
-Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
-
-/* route::get('/crud', function(){
-    return view('crud.index');
+Route::get('/logout', function () {
+    return redirect('/login');
 });
 
-route::get('/crud/create', function(){
-    return view('crud.create');
+Route::get('/', function () {
+    return redirect('/login');
 });
- */
+
 Route::resource('empleados', 'App\Http\Controllers\EmpleadoController');
+
 
 Route::middleware([
     'auth:sanctum',
