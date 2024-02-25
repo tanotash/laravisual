@@ -32,8 +32,16 @@
         <input type="text" class="form-control" name="dni" placeholder="Identificacion del empleado">
     </div>
     <div class="mb-4">
-    <button class="btn btn-primary" type="submit">Agregar</button>
+    <button class="btn btn-primary" id='agregar' type="submit">Agregar</button>
+    
     <a href='/empleados' class="btn btn-danger" type="reset">Cancelar</a>
+    @if(session('alert-success'))
+    <div class="alert alert-success">
+        {{ session('alert-success') }}
+    </div>
+@endif
+  
+    </div>
 </div>
 </form>
 

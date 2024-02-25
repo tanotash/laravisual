@@ -11,6 +11,11 @@
 @stop
 
 @section('content')
+@if(session('alert-success'))
+    <div class="alert alert-success">
+        {{ session('alert-success') }}
+    </div>
+@endif
    <a href="empleados/create" class="btn btn-primary mb-3">Agregar Empleado</a>
    <table id='empleados' class='table table-dark table-strippet mt-4' style="width:100">
     <thead>
@@ -37,12 +42,13 @@
                         @csrf
                         @method('DELETE')
                     
-                    <button type='submit'class='btn btn-danger'>Eliminar</button>
+                    <button type='submit' onclick="return confirm('¿Estás seguro de que deseas eliminar esto?');" class='btn btn-danger'>Eliminar</button>
                 </form>
             
         @endforeach
     
    @stop
+   
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">

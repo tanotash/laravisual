@@ -12,7 +12,7 @@
 
 @section('content')
     <p>Proximamente un dashboard</p>
-    <p>{{$hola='hola'}}</p>
+    
     
 @stop
 
@@ -21,6 +21,7 @@
 @stop
 
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script> swal("Oops!", "Something went wrong on the page!", "error"); </script>
 
 @stop

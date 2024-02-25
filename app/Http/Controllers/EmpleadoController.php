@@ -41,7 +41,7 @@ class EmpleadoController extends Controller
         $empleados->idobra = $request->get('obra');
         $empleados->dni = $request->get('dni');
         $empleados->save();
-        return redirect('/empleados');
+        return redirect('/empleados')->with('alert-success', 'Empleado guardado con éxito.');
 
     }
 
@@ -86,6 +86,6 @@ class EmpleadoController extends Controller
     {
         $empleado = Empleado::find($id);
         $empleado->delete();
-        return redirect('/empleados');
+        return redirect('/empleados')->with('alert-success', 'Empleado eliminado con éxito.');
     }
 }
