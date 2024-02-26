@@ -1,35 +1,32 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmpleadoController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Aquí es donde puedes registrar las rutas web para tu aplicación. Estas
+| rutas son cargadas por el RouteServiceProvider y todas ellas serán
+| asignadas al grupo de middleware "web". ¡Haz algo grandioso!
 |
 */
 
-
+// Redirecciones simples para usuarios no autenticados.
 Route::get('/logout', function () {
+    auth()->logout(); // Asegúrate de cerrar la sesión del usuario antes de redirigir.
     return redirect('/login');
-});
+})->name('logout');
 
-Route::get('/', function () {
-    return redirect('/login');
-});
+Route::redirect('/', '/login')->name('home');
 
-Route::resource('empleados', 'App\Http\Controllers\EmpleadoController');
+// Rutas para los empleados.
+Route::resource('empleados', EmpleadoController::class)->middleware(['auth']);
 
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
+// Rutas protegidas con autenticación y verificación de email.
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dash.index');
     })->name('dashboard');
