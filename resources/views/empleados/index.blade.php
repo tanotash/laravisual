@@ -1,13 +1,9 @@
 @extends('adminlte::page')
 
-@section('css')
-<link href='https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css' rel='stylesheet'>
-@stop
-
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>todos los empleados</h1>
+    <h1>Empleados</h1>
 @stop
 
 @section('content')
@@ -16,8 +12,8 @@
         {{ session('alert-success') }}
     </div>
 @endif
-   <a href="empleados/create" class="btn btn-primary mb-3">Agregar Empleado</a>
-   <table id='empleados' class='table table-dark table-strippet mt-4' style="width:100">
+<a href="{{ url('empleados/create') }}" class="btn btn-primary mb-3">Agregar Empleado</a>
+<table id="empleados" class="table table-dark table-striped mt-4" style="width:100%">
     <thead>
         <tr>
             <th>ID</th>
@@ -26,39 +22,42 @@
             <th>ID rol</th>
             <th>ID obra</th>
             <th>Acciones</th>
+            <th>Código QR</th> <!-- Agregar encabezado para la columna de QR -->
         </tr>
     </thead>
     <tbody>
         @foreach ($empleados as $empleado)
-        <tr> 
-            <td>{{$empleado->id}}</td>
-            <td>{{$empleado->nombre}}</td>
-            <td>{{$empleado->apellido}}</td>
-            <td>{{$empleado->idrol}}</td>
-            <td>{{$empleado->idobra}}</td>
+        <tr>
+            <td>{{ $empleado->id }}</td>
+            <td>{{ $empleado->nombre }}</td>
+            <td>{{ $empleado->apellido }}</td>
+            <td>{{ $empleado->idrol }}</td>
+            <td>{{ $empleado->idobra }}</td>
             <td>
-                <form action='{{route('empleados.destroy', $empleado->id)}}' method='POST'>
-                    <a href='empleados/{{$empleado->id}}/edit' class='btn btn-info'>Editar</a>
-                        @csrf
-                        @method('DELETE')
-                    
-                    <button type='submit' onclick="return confirm('¿Estás seguro de que deseas eliminar esto?');" class='btn btn-danger'>Eliminar</button>
+                <a href="{{ url('empleados/' . $empleado->id . '/edit') }}" class="btn btn-info">Editar</a>
+                <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST" style="display: inline-block;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esto?');">Eliminar</button>
                 </form>
-            
+            </td>
+            <td>
+                <!-- Mostrar el código QR si existe -->
+                @if($empleado->qr_path)
+                    <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
+                @else
+                    No disponible
+                @endif
+            </td>
+        </tr>
         @endforeach
-    
-   @stop
-   
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    </tbody>
+</table>
 @stop
 
 @section('js')
-    <script src='https://code.jquery.com/jquery-3.7.1.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js'> </script>
-    <script src='https://cdn.datatables.net/2.0.0/js/dataTables.js'> </script>
-    <script src='https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js'></script>
-    <script>new DataTable('#empleados');</script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
+    <script>$(document).ready(function() { $('#empleados').DataTable(); });</script>
 @stop
