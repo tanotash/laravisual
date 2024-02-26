@@ -93,6 +93,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
             'Spatie\\FlareClient\\' => 19,
             'Spatie\\Dashboard\\' => 17,
             'Spatie\\Backtrace\\' => 17,
+            'SimpleSoftwareIO\\QrCode\\' => 24,
         ),
         'R' => 
         array (
@@ -358,6 +359,10 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Spatie\\Backtrace\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/backtrace/src',
+        ),
+        'SimpleSoftwareIO\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -6011,6 +6016,18 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\BTC' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/BTC.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\DataTypeInterface' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/DataTypeInterface.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\Email' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/Email.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\Geo' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/Geo.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\PhoneNumber' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/PhoneNumber.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\SMS' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/SMS.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\WiFi' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/WiFi.php',
+        'SimpleSoftwareIO\\QrCode\\Facades\\QrCode' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Facades/QrCode.php',
+        'SimpleSoftwareIO\\QrCode\\Generator' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Generator.php',
+        'SimpleSoftwareIO\\QrCode\\Image' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Image.php',
+        'SimpleSoftwareIO\\QrCode\\ImageMerge' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/ImageMerge.php',
+        'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/QrCodeServiceProvider.php',
         'Spatie\\Backtrace\\Arguments\\ArgumentReducers' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ArgumentReducers.php',
         'Spatie\\Backtrace\\Arguments\\ProvidedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ProvidedArgument.php',
         'Spatie\\Backtrace\\Arguments\\ReduceArgumentPayloadAction' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReduceArgumentPayloadAction.php',

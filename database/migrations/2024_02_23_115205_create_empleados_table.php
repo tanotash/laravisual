@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('apellido')->nullable();
             $table->string('idrol')->nullable();  
             $table->string('idobra')->nullable();
+            $table->string('qr_path')->nullable();
             $table->text('DNI')->nullable();
             $table->timestamps();
         });

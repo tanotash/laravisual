@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empleado;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class EmpleadoController extends Controller
 {
@@ -33,16 +34,24 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        $empleados = new Empleado();
+        $empleado = new Empleado();
+        $empleado->nombre = $request->get('nombre');
+        $empleado->apellido = $request->get('apellido');
+        $empleado->idrol = $request->get('rol');
+        $empleado->idobra = $request->get('obra');
+        $empleado->dni = $request->get('dni');
+        
+        $empleado->save();
 
-        $empleados->nombre = $request->get('nombre');
-        $empleados->apellido = $request->get('apellido');
-        $empleados->idrol = $request->get('rol');
-        $empleados->idobra = $request->get('obra');
-        $empleados->dni = $request->get('dni');
-        $empleados->save();
+        // Generar QR
+        $qrCodePath = 'qrcodes/' . $empleado->id . '.svg';
+        QrCode::size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
+        
+        // Guardar ruta del QR en la base de datos
+        $empleado->qr_path = $qrCodePath;
+        $empleado->save();
+
         return redirect('/empleados')->with('alert-success', 'Empleado guardado con éxito.');
-
     }
 
     /**
@@ -75,9 +84,18 @@ class EmpleadoController extends Controller
         $empleado->idrol = $request->get('rol');
         $empleado->idobra = $request->get('obra');
         $empleado->dni = $request->get('dni');
+
+        // Generar QR nuevamente si es necesario
+        $qrCodePath = 'qrcodes/' . $empleado->id . '.svg';
+        QrCode::size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
+
+        // Actualizar ruta del QR en la base de datos (si decides almacenar la ruta)
+        $empleado->qr_path = $qrCodePath;
         $empleado->save();
+
         return redirect('/empleados');
     }
+
 
     /**
      * Remove the specified resource from storage.
