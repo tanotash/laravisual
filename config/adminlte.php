@@ -316,9 +316,13 @@ return [
             
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 2,
+            'label'       => 3,
             'label_color' => 'success',
             'submenu' => [
+                [
+                    'text' => 'Dashboard',
+                    'url' => 'dashboard',
+                ],
                 [
                     'text' => 'empleados',
                     'url'  => 'empleados',

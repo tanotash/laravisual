@@ -25,6 +25,9 @@ Route::redirect('/', '/login')->name('home');
 // Rutas para los empleados.
 Route::resource('empleados', EmpleadoController::class)->middleware(['auth']);
 
+
+Route::view('dashboard', 'dashboard')->name('dashboard')->middleware('auth');
+
 // Rutas protegidas con autenticación y verificación de email.
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
