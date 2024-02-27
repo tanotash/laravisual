@@ -108,4 +108,3 @@ class EmpleadoController extends Controller
         return redirect('/empleados')->with('alert-success', 'Empleado eliminado con éxito.');
     }
 }
-
