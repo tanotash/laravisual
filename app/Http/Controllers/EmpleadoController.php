@@ -44,9 +44,9 @@ class EmpleadoController extends Controller
         
         $empleado->save();
 
-        // Generar QR
+        // Generar QR en formato PNG
         $qrCodePath = 'qrcodes/' . $empleado->id . '.svg';
-        QrCode::size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
+        QrCode::format('svg')->size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
         
         // Guardar ruta del QR en la base de datos
         $empleado->qr_path = $qrCodePath;
@@ -54,6 +54,7 @@ class EmpleadoController extends Controller
 
         return redirect('/empleados')->with('alert-success', 'Empleado guardado con éxito.');
     }
+
 
     /**
      * Display the specified resource.
@@ -86,16 +87,17 @@ class EmpleadoController extends Controller
         $empleado->idobra = $request->get('obra');
         $empleado->dni = $request->get('dni');
 
-        // Generar QR nuevamente si es necesario
+        // Generar QR en formato PNG
         $qrCodePath = 'qrcodes/' . $empleado->id . '.svg';
-        QrCode::size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
+        QrCode::format('svg')->size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
 
-        // Actualizar ruta del QR en la base de datos (si decides almacenar la ruta)
+        // Actualizar ruta del QR en la base de datos
         $empleado->qr_path = $qrCodePath;
         $empleado->save();
 
         return redirect('/empleados');
     }
+
 
 
     /**
