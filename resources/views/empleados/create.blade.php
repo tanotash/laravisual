@@ -24,11 +24,11 @@
         <input type="text" class="form-control" name="rol" placeholder="Rol del empleado">
     </div>
     <div class="mb-3">
-        <label class="form-label">obra</label>
+        <label class="form-label">Obra</label>
         <input type="text" class="form-control" name="obra" placeholder="obra en que se encuentra el empleado">
     </div>
     <div class="mb-3">
-        <label class="form-label">Numero de Identificacion</label>
+        <label class="form-label">Número de Identificacion</label>
         <input type="text" class="form-control" name="dni" placeholder="Identificacion del empleado">
     </div>
     <div class="mb-4">

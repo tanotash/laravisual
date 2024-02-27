@@ -17,11 +17,11 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>ID rol</th>
-            <th>ID obra</th>
-            <th>Acciones</th>
+            <th>Nombre</th> <!-- Agregar encabezado para la columna de Nombre -->
+            <th>Apellido</th> <!-- Agregar encabezado para la columna de Apellido -->
+            <th>Rol</th> <!-- Agregar encabezado para la columna de Rol -->
+            <th>Obra</th> <!-- Agregar encabezado para la columna de Obra -->
+            <th>Acciones</th> <!-- Agregar encabezado para la columna de Acciones -->
             <th>Código QR</th> <!-- Agregar encabezado para la columna de QR -->
         </tr>
     </thead>
@@ -42,13 +42,16 @@
                 </form>
             </td>
             <td>
-                <!-- Mostrar el código QR si existe -->
                 @if($empleado->qr_path)
-                    <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
+                    <!-- Enlace para descargar el código QR -->
+                    <a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.svg">
+                        <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
+                        Descargar
+                    </a>
                 @else
                     No disponible
                 @endif
-            </td>
+            </td>   
         </tr>
         @endforeach
     </tbody>

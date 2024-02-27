@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Empleado;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Imagick;
 
 class EmpleadoController extends Controller
 {
@@ -107,3 +108,4 @@ class EmpleadoController extends Controller
         return redirect('/empleados')->with('alert-success', 'Empleado eliminado con éxito.');
     }
 }
+
