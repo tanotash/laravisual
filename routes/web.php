@@ -14,13 +14,15 @@ use App\Http\Controllers\EmpleadoController;
 |
 */
 
+
+// Redirects the root URL to the login page and assigns the name 'home' to the route.
+Route::redirect('/', '/login')->name('home');
+
 // Redirecciones simples para usuarios no autenticados.
 Route::get('/logout', function () {
     auth()->logout(); // Asegúrate de cerrar la sesión del usuario antes de redirigir.
     return redirect('/login');
 })->name('logout');
-
-Route::redirect('/', '/login')->name('home');
 
 // Rutas para los empleados.
 Route::resource('empleados', EmpleadoController::class)->middleware(['auth']);

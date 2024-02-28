@@ -327,10 +327,7 @@ return [
                     'text' => 'empleados',
                     'url'  => 'empleados',
                 ],
-                [
-                    'text' => 'proyectos',
-                    'url'  => 'proyectos',
-                ],
+          
 
             ],
             
