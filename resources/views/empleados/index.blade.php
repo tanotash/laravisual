@@ -44,7 +44,7 @@
             <td>
                 @if($empleado->qr_path)
                     <!-- Enlace para descargar el código QR -->
-                    <a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.svg">
+                    <a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.png">
                         <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
                         Descargar
                     </a>
