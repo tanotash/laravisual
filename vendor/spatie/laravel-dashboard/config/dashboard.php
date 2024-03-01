@@ -28,7 +28,26 @@ return [
     ],
     'tiles' => [
         'charts' => [     
+            
             'refresh_interval_in_seconds' => 300, // Default: 300 seconds (5 minutes)
+            'charts' => [
+                [
+                    'type' => 'line',
+                    'height' => '1/3',
+                    'width' => 'full',
+                    'title' => 'Ventas por mes',
+                    'datasets' => [
+                        [
+                            'label' => 'ventas',
+                            'data' => [150, 200, 250, 300],
+                        ],
+                    ],
+                    'options' => [
+                        'maintainAspectRatio' => false,
+                    ],
+                ]
+            ]
         ],
+        
     ],
 ];

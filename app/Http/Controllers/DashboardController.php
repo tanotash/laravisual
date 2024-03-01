@@ -8,14 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    public function index(){
-        $Empleados = Empleado::select(DB::raw("COUNT(*) as count"))
-        ->whereYear('created_at', date('Y'))
-        ->groupBy(DB::raw("Month(created_at)"))
-        ->pluck('count');
+    public function index()
+    {
+        $data = [
+            'labels' => ['Enero', 'Febrero', 'Marzo', 'Abril'],
+            'datasets' => [
+                [
+                    'label' => 'Ventas por mes',
+                    'backgroundColor' => 'rgba(255, 99, 132, 0.2)',
+                    'borderColor' => 'rgba(255, 99, 132, 1)',
+                    'data' => [150, 200, 250, 300]
+                ]
+            ]
+        ];
 
-    return view('dash.index', compact('Empleados'));
-    
-        
+        return view('dash.index', compact('data'));
     }
 }
