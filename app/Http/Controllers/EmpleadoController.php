@@ -46,8 +46,8 @@ class EmpleadoController extends Controller
 
         // Generar QR
         $qrCodePath = 'qrcodes/' . $empleado->id . '.png';
-        QrCode::size(400)
-            ->format('png')
+        QrCode::format('png')
+            ->size(400)
             ->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
         
         // Guardar ruta del QR en la base de datos
@@ -90,7 +90,7 @@ class EmpleadoController extends Controller
 
         // Generar QR nuevamente si es necesario
         $qrCodePath = 'qrcodes/' . $empleado->id . '.png';
-        QrCode::
+        QrCode::format('png')->
             size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
 
         // Actualizar ruta del QR en la base de datos (si decides almacenar la ruta)
@@ -115,8 +115,7 @@ class EmpleadoController extends Controller
         $nombreArchivo = "QR_{$empleado->nombre}_{$empleado->apellido}.png";
         $rutaArchivo = public_path("qrcodes/{$nombreArchivo}");
 
-        QrCode::format('png')
-            ->size(100)
+        QrCode::size(100)
             ->generate("{$empleado->nombre}-{$empleado->apellido}", $rutaArchivo);
         
             return $rutaArchivo;

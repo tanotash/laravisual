@@ -44,10 +44,14 @@
             <td>
                 @if($empleado->qr_path)
                     <!-- Enlace para descargar el código QR -->
-                    <a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.png">
+                    <object type="image/svg+xml" id="svgdata" data="{{ asset( $empleado->qr_path) }}" width="100" height="100">Tu navegador no soporta SVG</object>
+                    <button id="descargarQR" onclick="convertirSvgAPng()" class="btn btn-primary">Descargar</button>
+                
+                    <!--<a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.png">
                         <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
-                        Descargar
-                    </a>
+
+                        
+                    </a>-->
                 @else
                     No disponible
                 @endif
@@ -63,4 +67,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
     <script>$(document).ready(function() { $('#empleados').DataTable(); });</script>
+    <script>
+        function convertirSvgAPng() {
+            // Asumiendo que 'svgdata' es el ID del elemento SVG que quieres convertir.
+            // Ajusta este selector según sea necesario.
+            const svgelement = document.getElementById("svgdata");
+        
+            // Asegúrate de que saveSvgAsPng está definido y accesible en este punto.
+            saveSvgAsPng(svgelement, `QR_${empleado.nombre}_${empleado.apellido}.png`);
+        }
+    
+    </script>
 @stop
