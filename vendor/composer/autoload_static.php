@@ -93,6 +93,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
             'Spatie\\FlareClient\\' => 19,
             'Spatie\\Dashboard\\' => 17,
             'Spatie\\Backtrace\\' => 17,
+            'SimpleSoftwareIO\\QrCode\\' => 24,
         ),
         'R' => 
         array (
@@ -360,6 +361,10 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Spatie\\Backtrace\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/backtrace/src',
+        ),
+        'SimpleSoftwareIO\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -2272,7 +2277,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Illuminate\\Database\\Query\\Grammars\\SqlServerGrammar' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/Grammars/SqlServerGrammar.php',
         'Illuminate\\Database\\Query\\IndexHint' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/IndexHint.php',
         'Illuminate\\Database\\Query\\JoinClause' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/JoinClause.php',
-        'Illuminate\\Database\\Query\\JoinLateralClause' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/JoinLateralClause.php',
         'Illuminate\\Database\\Query\\Processors\\MySqlProcessor' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php',
         'Illuminate\\Database\\Query\\Processors\\PostgresProcessor' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php',
         'Illuminate\\Database\\Query\\Processors\\Processor' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php',
@@ -3249,7 +3253,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Laravel\\Prompts\\Output\\BufferedConsoleOutput' => __DIR__ . '/..' . '/laravel/prompts/src/Output/BufferedConsoleOutput.php',
         'Laravel\\Prompts\\Output\\ConsoleOutput' => __DIR__ . '/..' . '/laravel/prompts/src/Output/ConsoleOutput.php',
         'Laravel\\Prompts\\PasswordPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/PasswordPrompt.php',
-        'Laravel\\Prompts\\PausePrompt' => __DIR__ . '/..' . '/laravel/prompts/src/PausePrompt.php',
         'Laravel\\Prompts\\Progress' => __DIR__ . '/..' . '/laravel/prompts/src/Progress.php',
         'Laravel\\Prompts\\Prompt' => __DIR__ . '/..' . '/laravel/prompts/src/Prompt.php',
         'Laravel\\Prompts\\SearchPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/SearchPrompt.php',
@@ -3267,7 +3270,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Laravel\\Prompts\\Themes\\Default\\MultiSelectPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/MultiSelectPromptRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\NoteRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/NoteRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\PasswordPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/PasswordPromptRenderer.php',
-        'Laravel\\Prompts\\Themes\\Default\\PausePromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/PausePromptRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\ProgressRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/ProgressRenderer.php',
         'Laravel\\Prompts\\Themes\\Default\\Renderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/Renderer.php',
         'Laravel\\Prompts\\Themes\\Default\\SearchPromptRenderer' => __DIR__ . '/..' . '/laravel/prompts/src/Themes/Default/SearchPromptRenderer.php',
@@ -6028,6 +6030,18 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\BTC' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/BTC.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\DataTypeInterface' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/DataTypeInterface.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\Email' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/Email.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\Geo' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/Geo.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\PhoneNumber' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/PhoneNumber.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\SMS' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/SMS.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\WiFi' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/WiFi.php',
+        'SimpleSoftwareIO\\QrCode\\Facades\\QrCode' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Facades/QrCode.php',
+        'SimpleSoftwareIO\\QrCode\\Generator' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Generator.php',
+        'SimpleSoftwareIO\\QrCode\\Image' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Image.php',
+        'SimpleSoftwareIO\\QrCode\\ImageMerge' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/ImageMerge.php',
+        'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/QrCodeServiceProvider.php',
         'Spatie\\Backtrace\\Arguments\\ArgumentReducers' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ArgumentReducers.php',
         'Spatie\\Backtrace\\Arguments\\ProvidedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ProvidedArgument.php',
         'Spatie\\Backtrace\\Arguments\\ReduceArgumentPayloadAction' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReduceArgumentPayloadAction.php',
@@ -6725,7 +6739,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Symfony\\Component\\Mailer\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/mailer/Exception/RuntimeException.php',
         'Symfony\\Component\\Mailer\\Exception\\TransportException' => __DIR__ . '/..' . '/symfony/mailer/Exception/TransportException.php',
         'Symfony\\Component\\Mailer\\Exception\\TransportExceptionInterface' => __DIR__ . '/..' . '/symfony/mailer/Exception/TransportExceptionInterface.php',
-        'Symfony\\Component\\Mailer\\Exception\\UnexpectedResponseException' => __DIR__ . '/..' . '/symfony/mailer/Exception/UnexpectedResponseException.php',
         'Symfony\\Component\\Mailer\\Exception\\UnsupportedSchemeException' => __DIR__ . '/..' . '/symfony/mailer/Exception/UnsupportedSchemeException.php',
         'Symfony\\Component\\Mailer\\Header\\MetadataHeader' => __DIR__ . '/..' . '/symfony/mailer/Header/MetadataHeader.php',
         'Symfony\\Component\\Mailer\\Header\\TagHeader' => __DIR__ . '/..' . '/symfony/mailer/Header/TagHeader.php',
@@ -7107,7 +7120,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Symfony\\Component\\VarDumper\\Cloner\\Cursor' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Cursor.php',
         'Symfony\\Component\\VarDumper\\Cloner\\Data' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Data.php',
         'Symfony\\Component\\VarDumper\\Cloner\\DumperInterface' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/DumperInterface.php',
-        'Symfony\\Component\\VarDumper\\Cloner\\Internal\\NoDefault' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Internal/NoDefault.php',
         'Symfony\\Component\\VarDumper\\Cloner\\Stub' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/Stub.php',
         'Symfony\\Component\\VarDumper\\Cloner\\VarCloner' => __DIR__ . '/..' . '/symfony/var-dumper/Cloner/VarCloner.php',
         'Symfony\\Component\\VarDumper\\Command\\Descriptor\\CliDescriptor' => __DIR__ . '/..' . '/symfony/var-dumper/Command/Descriptor/CliDescriptor.php',
