@@ -2,44 +2,93 @@
 
 
 @section('title', 'Dashboard')
-<title>Laravel ChartJS Chart Example</title>
 
 
 
 @section('content')
 <head>
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+
+
+
 </head>    
-    <div class="dashboard">
-    <!-- Título y Gráfico de Rendimiento -->
-    <div class="chart-container">
-        <h2 class="chart-title">Total Performance</h2>
-        <canvas id="performanceChart" class="my-chart"></canvas>
+<div class="row">
+    <div class="col-12">
+
+        <div class="card card-chart">
+            <div class="card-header ">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <h5 class="card-category">Total Shipments</h5>
+                        <h2 class="card-title">Performance</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="performanceChart" ></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+<!-- Métricas Clave: Total Shipments -->
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Total Shipments</h5>
+                <h3 class="card-title"><i class="tim-icons icon-bell-55 text-primary"></i> 763,215</h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="shipmentsChart"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Métricas Clave: Total Shipments -->
-    <div class="big-number">
-        <span class="label">Total Shipments</span>
-        <canvas id="shipmentsChart" class="my-chart"></canvas>
+
+<!-- Métricas Clave: Daily Sales -->
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Daily Sales</h5>
+                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> 3,500€</h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Métricas Clave: Daily Sales -->
-    <div class="big-number">
-        <span class="label">Daily Sales</span>
-        <canvas id="salesChart" class="my-chart"></canvas>
+
+<!-- Métricas Clave: Completed Tasks -->
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Completed Tasks</h5>
+                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="tasksChart"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Métricas Clave: Completed Tasks -->
-    <div class="big-number">
-        <span class="label">Completed Tasks</span>
-        <canvas id="tasksChart" class="my-chart"></canvas>
-    </div>
+</div>
+
 </div>
 
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
     
   
@@ -57,7 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
         data: performanceData,
         options: {
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            
         }
     });
 
@@ -98,5 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 @stop

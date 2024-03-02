@@ -17,7 +17,11 @@ class ChartJSController extends Controller
                     'label' => 'Performance',
                     'backgroundColor' => 'rgba(125, 95, 255, 0.3)',
                     'borderColor' => 'rgb(125, 95, 255)',
-                    'data' => [90, 100, 80, 95, 110, 85, 88, 92, 110, 105, 99, 95]
+                    'data' => [90, 100, 80, 95, 110, 85, 88, 92, 110, 105, 99, 95],
+                    'fill' => 'start',
+                    'tension' => 0.4,
+                    'borderCapStyle' => 'round',
+                    'pointBackgroundColor' => 'rgb(125, 95, 255)',
                 ]
             ]
         ];
@@ -30,7 +34,11 @@ class ChartJSController extends Controller
                     'label' => 'Total Shipments',
                     'backgroundColor' => 'rgba(255, 99, 132, 0.2)',
                     'borderColor' => 'rgba(255, 99, 132, 1)',
-                    'data' => [1500, 2000, 2500, 1800, 2200, 2600]
+                    'data' => [1500, 2000, 2500, 1800, 2200, 2600],
+                    'fill' => 'start',
+                    'tension' => 0.4,
+                    'borderCapStyle' => 'round',
+                    'pointBackgroundColor' => 'rgba(255, 99, 132, 1)',
                 ]
             ]
         ];
@@ -43,7 +51,9 @@ class ChartJSController extends Controller
                     'label' => 'Daily Sales',
                     'backgroundColor' => 'rgba(54, 162, 235, 0.6)',
                     'borderColor' => 'rgba(54, 162, 235, 1)',
-                    'data' => [300, 600, 150, 200, 500, 300]
+                    'data' => [300, 600, 150, 200, 500, 300],
+                    'borderWidth' => 1
+
                 ]
             ]
         ];
@@ -56,7 +66,11 @@ class ChartJSController extends Controller
                     'label' => 'Completed Tasks',
                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
                     'borderColor' => 'rgba(75, 192, 192, 1)',
-                    'data' => [20, 50, 80, 20, 60, 70]
+                    'data' => [20, 50, 80, 20, 60, 70],
+                    'fill' => 'start',
+                    'tension' => 0.4,
+                    'borderCapStyle' => 'round',
+                    'pointBackgroundColor' => 'rgba(75, 192, 192, 1)',
                 ]
             ]
         ];
