@@ -316,7 +316,7 @@ return [
             
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 3,
+            'label'       => 2,
             'label_color' => 'success',
             'submenu' => [
                 [
