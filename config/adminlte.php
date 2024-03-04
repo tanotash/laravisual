@@ -339,7 +339,7 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
 
-        [
+        /* [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -392,7 +392,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ], */
         [
             'text' => 'Cerrar sesión',
             'url'  => 'logout',
