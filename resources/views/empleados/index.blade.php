@@ -44,14 +44,13 @@
             <td>
                 @if($empleado->qr_path)
                     <!-- Enlace para descargar el código QR -->
-                    <object type="image/svg+xml" id="svgdata" data="{{ asset( $empleado->qr_path) }}" width="100" height="100">Tu navegador no soporta SVG</object>
-                    <button id="descargarQR" onclick="convertirSvgAPng()" class="btn btn-primary">Descargar</button>
-                
-                    <!--<a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.png">
-                        <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
 
+                
+                    <a href="{{ asset($empleado->qr_path) }}" download="QR_{{ $empleado->nombre }}_{{ $empleado->apellido }}.png">
+                        <img src="{{ asset($empleado->qr_path) }}" alt="QR Code" style="width: 100px;">
                         
-                    </a>-->
+                        
+                    </a>
                 @else
                     No disponible
                 @endif
