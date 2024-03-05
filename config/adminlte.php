@@ -324,7 +324,7 @@ return [
                     'url' => 'dashboard',
                 ],
                 [
-                    'text' => 'empleados',
+                    'text' => 'Empleados',
                     'url'  => 'empleados',
                 ],
           
