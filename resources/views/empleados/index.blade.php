@@ -1,8 +1,20 @@
 @extends('adminlte::page')
 
+@section('css')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.datatables.net/2.0.1/css/dataTables.bootstrap5.css" rel="stylesheet">
+    <link rel='stylelsheet' href='/css/admin_custom.css'>
+
+
+@stop
+
+
 @section('title', 'Dashboard')
 
 @section('content_header')
+
+
     <h1>Empleados</h1>
 @stop
 
@@ -64,17 +76,9 @@
 @section('js')
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
-    <script>$(document).ready(function() { $('#empleados').DataTable(); });</script>
-    <script>
-        function convertirSvgAPng() {
-            // Asumiendo que 'svgdata' es el ID del elemento SVG que quieres convertir.
-            // Ajusta este selector según sea necesario.
-            const svgelement = document.getElementById("svgdata");
-        
-            // Asegúrate de que saveSvgAsPng está definido y accesible en este punto.
-            saveSvgAsPng(svgelement, `QR_${empleado.nombre}_${empleado.apellido}.png`);
-        }
-    
-    </script>
+
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
+    <script>new DataTable('#empleado');</script>
+
 @stop

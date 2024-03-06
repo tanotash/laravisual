@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DeletedRecord;
 use Illuminate\Http\Request;
 use App\Models\Empleado;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -46,7 +47,7 @@ class EmpleadoController extends Controller
 
         // Generar QR
         $qrCodePath = 'qrcodes/' . $empleado->id . '.png';
-        QrCode::format('png')
+        QrCode::format('svg')  //modificar dependiendo del SO que se use
             ->size(400)
             ->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
         
@@ -107,18 +108,21 @@ class EmpleadoController extends Controller
     public function destroy(string $id)
     {
         $empleado = Empleado::find($id);
+
+        $EpleadoEliminado = new DeletedRecord();
+
+        $EpleadoEliminado->nombre = $empleado->nombre;
+        $EpleadoEliminado->apellido = $empleado->apellido;
+        $EpleadoEliminado->idrol = $empleado->idrol;
+        $EpleadoEliminado->idobra = $empleado->idobra;
+        $EpleadoEliminado->dni = $empleado->dni;
+        $EpleadoEliminado->original_id = $empleado->id;
+        $EpleadoEliminado->delete_by = auth()->user()->id;
+        $EpleadoEliminado->save();
+        
         $empleado->delete();
         return redirect('/empleados')->with('alert-success', 'Empleado eliminado con éxito.');
     }
 
-    public function generarQR($empleado){
-        $nombreArchivo = "QR_{$empleado->nombre}_{$empleado->apellido}.png";
-        $rutaArchivo = public_path("qrcodes/{$nombreArchivo}");
 
-        QrCode::size(100)
-            ->generate("{$empleado->nombre}-{$empleado->apellido}", $rutaArchivo);
-        
-            return $rutaArchivo;
-
-    }
 }

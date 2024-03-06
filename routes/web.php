@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\ChartJSController;
 
+use App\Http\Controllers\ProyectoController;
 
 
 
@@ -38,3 +39,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 // Rutas para los empleados.
 Route::resource('empleados', EmpleadoController::class)->middleware(['auth']);
+
+// Rutas para los proyectos.
+Route::resource('proyectos', ProyectoController::class)->middleware(['auth']);
