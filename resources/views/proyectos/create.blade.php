@@ -17,15 +17,15 @@
 
     <div class="mb-3">
         <label class="form-label">Descripcion</label>
-        <input type="text" class="form-control" name="apellido" placeholder="Descripcion de la obra">
+        <input type="text" class="form-control" name="descripcion" placeholder="Descripcion de la obra">
     </div>
     <div class="mb-3">
-        <label class="form-label">Tio de Proyecto</label>
-        <input type="text" class="form-control" name="rol" placeholder="Tipo de obra">
+        <label class="form-label">Tipo de Proyecto</label>
+        <input type="text" class="form-control" name="tipoProyecto" placeholder="Tipo de obra">
     </div>
     <div class="mb-3">
         <label class="form-label">Ubicacion</label>
-        <input type="text" class="form-control" name="obra" placeholder="Ubicacion de la obra">
+        <input type="text" class="form-control" name="ubicacion" placeholder="Ubicacion de la obra">
     </div>
    
     <div class="mb-4">

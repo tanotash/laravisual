@@ -36,7 +36,7 @@ class ProyectoController extends Controller
         $proyecto = new Proyecto();
         $proyecto->nombre = $request->get('nombre');
         $proyecto->descripcion = $request->get('descripcion');
-        $proyecto->tipo_proyecto = $request->get('tipo_proyecto');
+        $proyecto->tipoProyecto = $request->get('tipoProyecto');
         $proyecto->ubicacion = $request->get('ubicacion');
         
         $proyecto->save();

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('tipo de proyecto');
-            $table->point('ubicacion');
+            $table->string('tipoProyecto');
+            $table->point('ubicacion')->nullable();
             $table->timestamps();
         });
     }
