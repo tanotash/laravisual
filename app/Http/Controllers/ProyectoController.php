@@ -74,6 +74,7 @@ class ProyectoController extends Controller
         $proyecto->ubicacion = $request->get('ubicacion');
 
         $proyecto->save();
+        
         return redirect('/proyectos')->with('alert-success', 'Proyecto actualizado con éxito.');
     }
 

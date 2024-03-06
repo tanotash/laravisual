@@ -8,7 +8,7 @@
 @section('content')
     <h1>Editar Proyecto {{$proyecto->id}}</h1>
 
-    <form action="/proyecto/{{$proyecto->id}}" method="POST">
+    <form action="/proyectos/{{$proyecto->id}}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -18,15 +18,15 @@
     
         <div class="mb-3">
             <label class="form-label">Descripcion</label>
-            <input type="text" class="form-control" name="apellido" value='{{$proyecto->descripcion}}'>
+            <input type="text" class="form-control" name="descripcion" value='{{$proyecto->descripcion}}'>
         </div>
         <div class="mb-3">
             <label class="form-label">Tipo de obra</label>
-            <input type="text" class="form-control" name="rol" value='{{$proyecto->tipoProyecto}}'>
+            <input type="text" class="form-control" name="tipoProyecto" value='{{$proyecto->tipoProyecto}}'>
         </div>
         <div class="mb-3">
             <label class="form-label">Ubicacion</label>
-            <input type="text" class="form-control" name="obra" value='{{$proyecto->ubicacion}}'>
+            <input type="text" class="form-control" name="ubicacion" value='{{$proyecto->ubicacion}}'>
         </div>
 
         

@@ -91,7 +91,7 @@ class EmpleadoController extends Controller
 
         // Generar QR nuevamente si es necesario
         $qrCodePath = 'qrcodes/' . $empleado->id . '.png';
-        QrCode::format('png')->
+        QrCode::format('svg')->
             size(400)->generate(route('empleados.show', $empleado->id), public_path($qrCodePath));
 
         // Actualizar ruta del QR en la base de datos (si decides almacenar la ruta)
