@@ -70,9 +70,11 @@ class ProyectoController extends Controller
         $proyecto = Proyecto::find($id);
         $proyecto->nombre = $request->get('nombre');
         $proyecto->descripcion = $request->get('descripcion');
-        $proyecto->tipo_proyecto = $request->get('tipo_proyecto');
+        $proyecto->tipoProyecto = $request->get('tipoProyecto');
         $proyecto->ubicacion = $request->get('ubicacion');
 
+        $proyecto->save();
+        return redirect('/proyectos')->with('alert-success', 'Proyecto actualizado con éxito.');
     }
 
     /**

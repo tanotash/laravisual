@@ -42,7 +42,7 @@
             <td>{{ $proyecto->id }}</td>
             <td>{{ $proyecto->nombre }}</td>
             <td>{{ $proyecto->descripcion }}</td>
-            <td>{{ $proyecto->tipo_proyecto }}</td>
+            <td>{{ $proyecto->tipoProyecto }}</td>
             <td>{{ $proyecto->ubicacion }}</td>
             <td>
                 <a href="{{ url('proyectos/' . $proyecto->id . '/edit') }}" class="btn btn-info">Editar</a>

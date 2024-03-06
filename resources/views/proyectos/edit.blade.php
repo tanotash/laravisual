@@ -22,7 +22,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Tipo de obra</label>
-            <input type="text" class="form-control" name="rol" value='{{$proyecto->tipo_proyecto}}'>
+            <input type="text" class="form-control" name="rol" value='{{$proyecto->tipoProyecto}}'>
         </div>
         <div class="mb-3">
             <label class="form-label">Ubicacion</label>
@@ -31,7 +31,7 @@
 
         
         <div class="mb-4">
-        <button class="btn btn-primary" type="submit">Guardar</button>
+        <button class="btn btn-primary" type="submit">Actualizar</button>
         <a href='/proyectos' class="btn btn-danger" type="reset">Cancelar</a>
     </div>
     </form>
