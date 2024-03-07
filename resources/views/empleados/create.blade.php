@@ -25,7 +25,14 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Obra</label>
-        <input type="text" class="form-control" name="obra" placeholder="obra en que se encuentra el empleado">
+        <div class="mb-3">
+        <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg" name="obra" placeholder="obra en que se encuentra el empleado">
+            <option selected>Selecciona la obra</option>
+            @foreach ($proyectos as $proyecto)
+            <option value="{{$proyecto->id}}">{{$proyecto->nombre}}</option>
+            @endforeach
+        </select>
+        </div>
     </div>
     <div class="mb-3">
         <label class="form-label">Número de Identificacion</label>
@@ -33,7 +40,7 @@
     </div>
     <div class="mb-4">
     <button class="btn btn-primary" id='agregar' type="submit">Agregar</button>
-    
+
     <a href='/empleados' class="btn btn-danger" type="reset">Cancelar</a>
     @if(session('alert-success'))
     <div class="alert alert-success">

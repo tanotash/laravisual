@@ -26,8 +26,17 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Obra</label>
-            <input type="text" class="form-control" name="obra" value='{{$empleado->idobra}}'>
+            <div class="mb-3">
+            <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg" name="obra" value='{{$empleado->idobra}}'>
+                <option selected>Selecciona la obra</option>
+                @foreach ($proyectos as $proyecto)
+                <option value="{{$proyecto->id}}" {{$empleado->proyecto == $proyecto->id ? 'selected' : ''}}>{{$proyecto->nombre}}</option>
+                @endforeach
+            </select>
+            </div>
+
         </div>
+       
         <div class="mb-3">
             <label class="form-label">Número de Identificacion</label>
             <input type="text" class="form-control" name="dni" value='{{$empleado->DNI}}'>

@@ -6,6 +6,7 @@ use App\Models\DeletedRecord;
 use Illuminate\Http\Request;
 use App\Models\Empleado;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Models\Proyecto;
 use Imagick;
 
 class EmpleadoController extends Controller
@@ -20,15 +21,17 @@ class EmpleadoController extends Controller
     public function index()
     {
         $empleados = Empleado::all();
-        return view('empleados.index')->with('empleados', $empleados);
+        $proyectos = Proyecto::with('empleados')->get();
+        return view('empleados.index', compact('empleados', 'proyectos'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('empleados.create');
+    {   
+        $proyectos = Proyecto::all();
+        return view('empleados.create', compact('proyectos'));
     }
 
     /**
@@ -72,7 +75,9 @@ class EmpleadoController extends Controller
     public function edit(string $id)
     {
         $empleado = Empleado::find($id);
-        return view('empleados.edit')->with('empleado', $empleado); 
+        $proyectos = Proyecto::all();
+
+        return view('empleados.edit', compact('empleado','proyectos')); 
 
     }
 
