@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('tipoProyecto');
-            $table->point('ubicacion')->nullable();
+            $table->decimal('latitud', 10, 8);
+            $table->decimal('longitud', 11, 8);
             $table->timestamps();
         });
     }

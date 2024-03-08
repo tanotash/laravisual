@@ -37,8 +37,9 @@ class ProyectoController extends Controller
         $proyecto->nombre = $request->get('nombre');
         $proyecto->descripcion = $request->get('descripcion');
         $proyecto->tipoProyecto = $request->get('tipoProyecto');
-        $proyecto->ubicacion = $request->get('ubicacion');
-        
+        $proyecto->latitud = $request->get('latitud');
+        $proyecto->longitud = $request->get('longitud');
+                
         $proyecto->save();
 
         return redirect('/proyectos')->with('alert-success', 'Proyecto guardado con éxito.');
@@ -71,7 +72,8 @@ class ProyectoController extends Controller
         $proyecto->nombre = $request->get('nombre');
         $proyecto->descripcion = $request->get('descripcion');
         $proyecto->tipoProyecto = $request->get('tipoProyecto');
-        $proyecto->ubicacion = $request->get('ubicacion');
+        $proyecto->latitud = $request->get('latitud');
+        $proyecto->longitud = $request->get('longitud');
 
         $proyecto->save();
         

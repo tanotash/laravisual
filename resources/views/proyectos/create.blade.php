@@ -23,10 +23,20 @@
         <label class="form-label">Tipo de Proyecto</label>
         <input type="text" class="form-control" name="tipoProyecto" placeholder="Tipo de obra">
     </div>
-    <div class="mb-3">
-        <label class="form-label">Ubicacion</label>
+
+
+    <div id="mapid" style="height: 400px;" >
+    <label class="form-label">Ubicacion</label>
+
+
+    <input type="hidden" id="latitud" name="latitud">
+    <input type="hidden" id="longitud" name="longitud">
+</div>
+
+
+{{--     <div class="mb-3">
         <input type="text" class="form-control" name="ubicacion" placeholder="Ubicacion de la obra">
-    </div>
+    </div> --}}
    
     <div class="mb-4">
     <button class="btn btn-primary" id='agregar' type="submit">Agregar</button>
@@ -48,8 +58,33 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        var map = L.map('mapid').setView([21.1582976,-86.8548608], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var marker = L.marker([21.1582976,-86.8548608]).addTo(map);
+         
+
+
+        map.on('click', function(e){
+
+            marker.setLatLng(e.latlng);
+            
+            var latitud = e.latlng.lat;
+            var longitud = e.latlng.lng;
+            document.getElementById('latitud').value = latitud;
+            document.getElementById('longitud').value = longitud;
+            L.marker([latitud, longitud]).addTo(map);
+        });
+    
+    </script>
 @stop

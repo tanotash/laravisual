@@ -32,7 +32,6 @@
             <th>Nombre</th> <!-- Agregar encabezado para la columna de Nombre -->
             <th>Descripcion</th> <!-- Agregar encabezado para la columna de Apellido -->
             <th>Tipo de obra</th> <!-- Agregar encabezado para la columna de Rol -->
-            <th>ubicacion</th> <!-- Agregar encabezado para la columna de Obra -->
             <th>Acciones</th> <!-- Agregar encabezado para la columna de Acciones -->
         </tr>
     </thead>
@@ -43,7 +42,6 @@
             <td>{{ $proyecto->nombre }}</td>
             <td>{{ $proyecto->descripcion }}</td>
             <td>{{ $proyecto->tipoProyecto }}</td>
-            <td>{{ $proyecto->ubicacion }}</td>
             <td>
                 <a href="{{ url('proyectos/' . $proyecto->id . '/edit') }}" class="btn btn-info">Editar</a>
                 <form action="{{ route('proyectos.destroy', $proyecto->id) }}" method="POST" style="display: inline-block;">
