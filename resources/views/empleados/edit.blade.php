@@ -30,7 +30,7 @@
             <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg" name="obra" value='{{$empleado->idobra}}'>
                 <option selected>Selecciona la obra</option>
                 @foreach ($proyectos as $proyecto)
-                <option value="{{$proyecto->id}}" {{$empleado->proyecto == $proyecto->id ? 'selected' : ''}}>{{$proyecto->nombre}}</option>
+                <option value="{{$proyecto->id}}" {{$empleado->idobra == $proyecto->id ? 'selected' : ''}}>{{$proyecto->nombre}}</option>
                 @endforeach
             </select>
             </div>

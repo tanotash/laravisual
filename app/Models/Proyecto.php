@@ -9,6 +9,7 @@ class Proyecto extends Model
 {
 
     use HasFactory;
+    
     public function empleados()
     {
         return $this->hasMany(Empleado::class, 'idobra');
