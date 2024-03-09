@@ -41,7 +41,7 @@
     <div class="mb-4">
     <button class="btn btn-primary" id='agregar' type="submit">Agregar</button>
     
-    <a href='/empleados' class="btn btn-danger" type="reset">Cancelar</a>
+    <a href='/proyectos' class="btn btn-danger" type="reset">Cancelar</a>
     @if(session('alert-success'))
     <div class="alert alert-success">
         {{ session('alert-success') }}

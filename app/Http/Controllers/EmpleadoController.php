@@ -8,6 +8,7 @@ use App\Models\Empleado;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Models\Proyecto;
 use Imagick;
+use App\Models\Cargo;
 
 class EmpleadoController extends Controller
 {
@@ -21,8 +22,10 @@ class EmpleadoController extends Controller
     public function index()
     {
         $empleados = Empleado::all();
+        $cargos = Cargo::with('empleados')->get();
+
         $proyectos = Proyecto::with('empleados')->get();
-        return view('empleados.index', compact('empleados', 'proyectos'));
+        return view('empleados.index', compact('empleados', 'proyectos', 'cargos'));
     }
 
     /**
@@ -31,7 +34,8 @@ class EmpleadoController extends Controller
     public function create()
     {   
         $proyectos = Proyecto::all();
-        return view('empleados.create', compact('proyectos'));
+        $cargos = Cargo::all();
+        return view('empleados.create', compact('proyectos', 'cargos'));
     }
 
     /**
@@ -76,8 +80,9 @@ class EmpleadoController extends Controller
     {
         $empleado = Empleado::find($id);
         $proyectos = Proyecto::all();
+        $cargos = Cargo::all();
 
-        return view('empleados.edit', compact('empleado','proyectos')); 
+        return view('empleados.edit', compact('empleado','proyectos', 'cargos')); 
 
     }
 

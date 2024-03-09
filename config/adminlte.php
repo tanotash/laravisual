@@ -331,6 +331,10 @@ return [
                     'text' => 'Proyectos',
                     'url'  => 'proyectos',
                 ],
+                [
+                    'text' => 'Cargos',
+                    'url'  => 'cargos',
+                ],
           
 
             ],

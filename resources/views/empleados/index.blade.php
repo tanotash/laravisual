@@ -31,10 +31,11 @@
             <th>ID</th>
             <th>Nombre</th> <!-- Agregar encabezado para la columna de Nombre -->
             <th>Apellido</th> <!-- Agregar encabezado para la columna de Apellido -->
-            <th>Rol</th> <!-- Agregar encabezado para la columna de Rol -->
+            <th>Cargo</th> <!-- Agregar encabezado para la columna de Rol -->
             <th>Obra</th> <!-- Agregar encabezado para la columna de Obra -->
-            <th>Acciones</th> <!-- Agregar encabezado para la columna de Acciones -->
             <th>Código QR</th> <!-- Agregar encabezado para la columna de QR -->
+            <th>Acciones</th> <!-- Agregar encabezado para la columna de Acciones -->
+           
         </tr>
     </thead>
     <tbody>
@@ -43,16 +44,8 @@
             <td>{{ $empleado->id }}</td>
             <td>{{ $empleado->nombre }}</td>
             <td>{{ $empleado->apellido }}</td>
-            <td>{{ $empleado->idrol }}</td>
-            <td>{{ $empleado->proyecto->nombre ?? ''}}</td>
-            <td>
-                <a href="{{ url('empleados/' . $empleado->id . '/edit') }}" class="btn btn-info">Editar</a>
-                <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST" style="display: inline-block;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esto?');">Eliminar</button>
-                </form>
-            </td>
+            <td>{{ $empleado->idrol->nombre ?? 'sin cargo' }}</td>
+            <td>{{ $empleado->proyecto->nombre ?? 'sin obra'}}</td>
             <td>
                 @if($empleado->qr_path)
                     <!-- Enlace para descargar el código QR -->
@@ -66,7 +59,16 @@
                 @else
                     No disponible
                 @endif
+            <td>
+                <a href="{{ url('empleados/' . $empleado->id . '/edit') }}" class="btn btn-info">Editar</a>
+                <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST" style="display: inline-block;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esto?');">Eliminar</button>
+                </form>
+            </td>
             </td>   
+            
         </tr>
         @endforeach
     </tbody>

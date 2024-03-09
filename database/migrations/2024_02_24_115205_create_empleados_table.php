@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->nullable();
             $table->string('apellido')->nullable();
-            $table->string('idrol')->nullable();  
+            $table->unsignedBigInteger('idrol');  
+            $table->foreign('idrol')->references('id')->on('cargos')->onDelete('cascade');
+
             $table->unsignedBigInteger('idobra');
             $table->foreign('idobra')->references('id')->on('proyectos')->onDelete('cascade');
+            
             $table->string('qr_path')->nullable();
             $table->text('DNI')->nullable();
             $table->timestamps();

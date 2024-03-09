@@ -22,7 +22,13 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Rol</label>
-            <input type="text" class="form-control" name="rol" value='{{$empleado->idrol}}'>
+        <div class="mb-3">
+            <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg" name="rol" value='{{$empleado->idcargo}}'>
+                <option selected>Selecciona el cargo</option>
+                @foreach ($cargos as $cargo)
+                <option value="{{$cargo->id}}" {{$empleado->idcargo == $cargo->id ? 'selected' : ''}}>{{$cargo->nombre}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label class="form-label">Obra</label>

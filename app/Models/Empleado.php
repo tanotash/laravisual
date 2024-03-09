@@ -13,4 +13,8 @@ class Empleado extends Model
     {
         return $this->belongsTo(Proyecto::class, 'idobra');
     }
+    public function cargo()
+    {
+        return $this->belongsTo(Cargo::class, 'idrol');
+    }
 }

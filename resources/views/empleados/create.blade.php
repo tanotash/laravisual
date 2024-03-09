@@ -21,8 +21,16 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Rol</label>
-        <input type="text" class="form-control" name="rol" placeholder="Rol del empleado">
+<div class="mb-3">
+        <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg" name="rol" placeholder="rol del empleado">
+            <option selected>Selecciona el cargo</option>
+            @foreach ($cargos as $cargo)
+            <option value="{{$cargo->id}}">{{$cargo->nombre}}</option>
+            @endforeach
+        </select>
     </div>
+    </div>
+    
     <div class="mb-3">
         <label class="form-label">Obra</label>
         <div class="mb-3">

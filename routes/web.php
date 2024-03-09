@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\ChartJSController;
-
+use App\Http\Controllers\CargoController;
 use App\Http\Controllers\ProyectoController;
 
 
@@ -42,3 +42,6 @@ Route::resource('empleados', EmpleadoController::class)->middleware(['auth']);
 
 // Rutas para los proyectos.
 Route::resource('proyectos', ProyectoController::class)->middleware(['auth']);
+
+// Rutas para los cargos.
+Route::resource('cargos', CargoController::class)->middleware(['auth']);

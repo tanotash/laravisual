@@ -33,6 +33,11 @@
         </div>
 
 
+{{--         <div class="mb-3">
+            <label class="form-label">Ubicacion</label>
+            <input type="text" class="form-control" name="ubicacion" value='{{$proyecto->ubicacion}}'>
+        </div>
+ --}}
         
         <div class="mb-4">
         <button class="btn btn-primary" type="submit">Actualizar</button>
@@ -44,8 +49,25 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />@stop
 
 @section('js')
-<script> console.log('Hi!');
-    </script>
-@stop
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        var map = L.map('mapid').setView([{{$proyecto->latitud}}, {{$proyecto->longitud}}], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        var marker = L.marker([{{$proyecto->latitud}}, {{$proyecto->longitud}}]).addTo(map);
+
+        map.on('click', function(e){
+            marker.setLatLng(e.latlng);
+            
+            var latitud = e.latlng.lat;
+            var longitud = e.latlng.lng;
+            document.getElementById('latitud').value = latitud;
+            document.getElementById('longitud').value = longitud;
+        });
+    
+    </script>@stop
