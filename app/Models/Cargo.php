@@ -11,6 +11,6 @@ class Cargo extends Model
 
     public function empleados()
     {
-        return $this->hasMany(Empleado::class, 'idrol');
+        return $this->hasMany(Empleado::class, 'idrol', "id");
     }
 }

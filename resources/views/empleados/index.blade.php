@@ -44,7 +44,7 @@
             <td>{{ $empleado->id }}</td>
             <td>{{ $empleado->nombre }}</td>
             <td>{{ $empleado->apellido }}</td>
-            <td>{{ $empleado->idrol->nombre ?? 'sin cargo' }}</td>
+            <td>{{ $empleado->cargo->nombre ?? 'sin cargo' }}</td>
             <td>{{ $empleado->proyecto->nombre ?? 'sin obra'}}</td>
             <td>
                 @if($empleado->qr_path)

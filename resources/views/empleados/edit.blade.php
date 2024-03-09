@@ -26,7 +26,7 @@
             <select class="form-select form-select-lg mb-6" aria-label=".form-select-lg" name="rol" value='{{$empleado->idcargo}}'>
                 <option selected>Selecciona el cargo</option>
                 @foreach ($cargos as $cargo)
-                <option value="{{$cargo->id}}" {{$empleado->idcargo == $cargo->id ? 'selected' : ''}}>{{$cargo->nombre}}</option>
+                <option value="{{$cargo->id}}" {{$empleado->idrol == $cargo->id ? 'selected' : ''}}>{{$cargo->nombre}}</option>
                 @endforeach
             </select>
         </div>

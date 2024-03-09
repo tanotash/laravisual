@@ -23,7 +23,6 @@ class EmpleadoController extends Controller
     {
         $empleados = Empleado::all();
         $cargos = Cargo::with('empleados')->get();
-
         $proyectos = Proyecto::with('empleados')->get();
         return view('empleados.index', compact('empleados', 'proyectos', 'cargos'));
     }
