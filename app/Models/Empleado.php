@@ -25,4 +25,8 @@ class Empleado extends Model
     {
         return $this->belongsTo(User::class, 'updated_by');
     }
+    public function asistencias()
+    {
+        return $this->hasMany(Asistencia::class, 'idempleado');
+    }
 }
