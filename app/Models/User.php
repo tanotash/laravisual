@@ -89,4 +89,18 @@ class User extends Authenticatable
         }
         return false;
     }
+    public function empleados()
+    {
+        return $this->hasMany(Empleado::class, 'created_by');
+
+    }
+    public function updatedBy()
+    {
+        return $this->hasMany(Empleado::class, 'updated_by');
+    }
+    public function deletedBy()
+    {
+        return $this->hasMany(DeletedRecord::class, 'deleted_by');
+    }
+
 }

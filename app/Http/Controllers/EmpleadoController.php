@@ -48,6 +48,7 @@ class EmpleadoController extends Controller
         $empleado->idrol = $request->get('rol');
         $empleado->idobra = $request->get('obra');
         $empleado->dni = $request->get('dni');
+        $empleado->created_by = auth()->user()->id;
         
         $empleado->save();
 
@@ -97,6 +98,7 @@ class EmpleadoController extends Controller
         $empleado->idrol = $request->get('rol');
         $empleado->idobra = $request->get('obra');
         $empleado->dni = $request->get('dni');
+        $empleado->updated_by = auth()->user()->id;
 
         // Generar QR nuevamente si es necesario
         $qrCodePath = 'qrcodes/' . $empleado->id . '.png';
